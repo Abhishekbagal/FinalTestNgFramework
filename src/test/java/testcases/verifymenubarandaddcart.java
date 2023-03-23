@@ -3,19 +3,36 @@ package testcases;
 import java.time.Duration;
 import java.util.Arrays;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import PageObjectModel.AddCartObject;
 import PageObjectModel.LoginPageObject;
-import Resources.baseclass;
+import Resources.Baseclass;
 
-public class verifymenubarandaddcart extends baseclass {
+public class verifymenubarandaddcart extends Baseclass {
 	@Test
 	
 	public void menu() throws InterruptedException {
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
+	
+		
+		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+
+		WebDriver driver=new ChromeDriver(options);
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get("https://naveenautomationlabs.com/opencart/");
+		
+
+		 
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		 
 		 driver.manage().window().maximize();
 		 
 		 AddCartObject obj=new AddCartObject(driver);
@@ -43,7 +60,7 @@ public class verifymenubarandaddcart extends baseclass {
 		 System.out.println(array);//$123.20
 		
 		 
-		 String replace=array.replaceAll("[$,]","");
+		 String replace=array.replaceAll("[$,]","");//123.20
 		 
 		 
 		 System.out.println(replace);
@@ -83,7 +100,7 @@ public class verifymenubarandaddcart extends baseclass {
 		 System.out.println(change);
 		 Thread.sleep(2000);
 		 
-		 String remove=change.replaceAll("[$,]","");
+		 String remove=change.replaceAll("[$,]","");//241.99
 		 
 		
 		 System.out.println(remove);
@@ -91,7 +108,7 @@ public class verifymenubarandaddcart extends baseclass {
 		 
 		 double d2=Double.parseDouble(remove);
 		
-		 System.out.println(d2);
+		 System.out.println(d2);//241.99
 		 
 		 Thread.sleep(4000);
 		 obj.samsungcart().click();
@@ -121,15 +138,7 @@ public class verifymenubarandaddcart extends baseclass {
 		 }
 		 
 		 
-		
-		 
-		
-		 
-		 
-		 
-		 
-		
-		
+		 driver.close();
 	}
 
 }

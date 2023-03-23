@@ -32,6 +32,8 @@ public class LoginPageObject {
 	
 	
 	
+	
+	
 	public LoginPageObject(WebDriver driver2) {
 		
 		this.driver=driver2;
@@ -80,6 +82,7 @@ public class LoginPageObject {
 		
 		return driver.findElement(cont);
 	}
+	
 	
 
 }

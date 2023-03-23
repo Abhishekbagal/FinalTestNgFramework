@@ -9,13 +9,21 @@ public class AddCartObject {
 	public WebDriver driver;
 	
 	
-    private By search=By.xpath("//input[@class='form-control input-lg']");
+    //Store the X-path of Add-Cart_object model
+	private By search=By.xpath("//input[@class='form-control input-lg']");
+	
 	private By searchbtn=By.xpath("//button[@class='btn btn-default btn-lg']");
+	
 	private By Icart=By.xpath("(//span[@class='hidden-xs hidden-sm hidden-md'])[7]");
+	
 	private By samcart=By.xpath("(//span[@class='hidden-xs hidden-sm hidden-md'])[8]");
+	
 	private By clickcart=By.xpath("//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']");
+	
 	private By Itext=By.xpath("//*[@id=\"content\"]/div[3]/div/div/div[2]/div[1]/p[2]");
+	
 	private By stext=By.xpath("(//p[@class='price'])[2]");
+	
 	private By totalvalue=By.xpath("(//td[@class='text-right'])[12]");
 	
 	public AddCartObject(WebDriver driver2) {
