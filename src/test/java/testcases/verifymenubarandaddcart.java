@@ -19,12 +19,9 @@ public class verifymenubarandaddcart extends Baseclass {
 		
 		
 	
-		
-		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver_win32\\chromedriver.exe");
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
+		System.setProperty("webdriver.http.factory","jdk-http-client");
 
-		WebDriver driver=new ChromeDriver(options);
+		WebDriver driver=new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://naveenautomationlabs.com/opencart/");

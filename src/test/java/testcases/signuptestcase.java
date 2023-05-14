@@ -19,12 +19,8 @@ public class signuptestcase extends Baseclass{
 	public void signup() throws IOException, InterruptedException {
 		
 		
-		System.setProperty("webdriver.chrome.driver","G:\\chromedriver_win32\\chromedriver.exe");
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		
-	
-		WebDriver driver=new ChromeDriver(options);
+		System.setProperty("webdriver.http.factory","jdk-http-client");
+		WebDriver driver=new ChromeDriver();
 		driver.get("https://naveenautomationlabs.com/opencart/");
 		Thread.sleep(2000);
 		driver.manage().window().maximize();

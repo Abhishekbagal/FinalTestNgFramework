@@ -26,10 +26,10 @@ public class logintestcase extends Baseclass {
 	
 		//Thread.sleep(2000);
 		
-		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver_win32\\chromedriver.exe");
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-		WebDriver driver=new ChromeDriver(options);
+		System.setProperty("webdriver.http.factory","jdk-http-client");
+		//ChromeOptions options=new ChromeOptions();
+		//options.addArguments("--remote-allow-origins=*");
+		WebDriver driver=new ChromeDriver();
 		driver.get("https://naveenautomationlabs.com/opencart/");
 		
 		

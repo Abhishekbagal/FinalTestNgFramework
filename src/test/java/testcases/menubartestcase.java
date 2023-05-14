@@ -22,12 +22,10 @@ public class menubartestcase extends Baseclass{
 		
 		
 		
-		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.http.factory","jdk-http-client");
 		
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver(options);
+		WebDriver driver=new ChromeDriver();
 		driver.get("https://naveenautomationlabs.com/opencart");
 		
 		driver.manage().window().maximize();

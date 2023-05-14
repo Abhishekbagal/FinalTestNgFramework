@@ -20,13 +20,9 @@ public class verifyfootertests extends Baseclass {
 	public void footer() throws InterruptedException {
 		
 		
+		System.setProperty("webdriver.http.factory","jdk-http-client");
 		
-		System.setProperty("webdriver.chrome.driver","G:\\chromedriver_win32\\chromedriver.exe");
-		
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");
-	
-		WebDriver driver=new ChromeDriver(options);
+		WebDriver driver=new ChromeDriver();
 		driver.get("https://naveenautomationlabs.com/opencart/");
 		
 		
